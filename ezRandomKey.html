@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeLink Checker</title>
+</head>
+<body>
+    <h1>Welcome to Your Website</h1>
+    <p>This website can only be accessed through a safe link.</p>
+
+    <script>
+        // Function to check if the URL contains the safelink parameter
+        function checkSafeLink() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const safelinkParam = urlParams.get('safelink');
+
+            // If safelink parameter is found and is true, allow access to the main content
+            if (safelinkParam && safelinkParam === 'true') {
+                console.log('User accessed via safelink');
+                // Do something to allow access to the main content
+                
+            } else {
+                console.log('User did not access via safelink');
+                // Redirect to another page or deny access
+                window.location.href = 'https://google.com/'; // Change this URL to your preferred page
+            }
+        }
+
+        // Call the function when the page loads
+        window.onload = checkSafeLink;
+    </script>
+</body>
+</html>
