@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Random Key</title>
+</head>
+<script type="text/javascript">
+    var go_url = 'https://semawur.com/';
+    var api = '99394a804f4dc6d4c1919c9446dda6474cf2ec52';
+    var shorten_includ = ["https://ezii54.github.io/ezRandomKey"];
+</script>
+<script src="//safelinku.com/js/web-script.js"></script>
+<body>
+    <h1>Generate Random Key</h1>
+    
+    <!-- Tombol untuk menghasilkan kunci acak -->
+    <button id="generateKeyButton">Generate Random Key</button>
+
+    <!-- Tempat untuk menampilkan kunci acak yang dihasilkan -->
+    <div id="randomKeyResult" style="display: none;">
+        <h2>Random Key:</h2>
+        <p id="randomKey"></p>
+    </div>
+
+    <script>
+        // Function to generate a random key
+        function generateRandomKey() {
+            // Length of the random key
+            const length = 10;
+
+            // Characters allowed in the random key
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+            let randomKey = '';
+            for (let i = 0; i < length; i++) {
+                // Generate a random index to select a character from the characters string
+                const randomIndex = Math.floor(Math.random() * characters.length);
+                // Append the selected character to the random key
+                randomKey += characters.charAt(randomIndex);
+            }
+            return randomKey;
+        }
+
+        // Function to handle button click and display the random key
+        document.getElementById('generateKeyButton').addEventListener('click', function() {
+            // Generate a random key
+            const key = generateRandomKey();
+
+            // Display the random key to the user
+            document.getElementById('randomKey').textContent = key;
+            document.getElementById('randomKeyResult').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
